@@ -1,0 +1,22 @@
+# OK
+query TodoListQuery {
+  todos {
+    id
+    ...TodoList_Todo
+  }
+}
+
+# NG
+query TodoList {
+  todos {
+    id
+    ...TodoList_Todo
+  }
+}
+
+query TodosQuery {
+  todos {
+    id
+    ...TodoList_Todo
+  }
+}

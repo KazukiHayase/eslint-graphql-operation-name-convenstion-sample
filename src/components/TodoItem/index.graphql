@@ -1,0 +1,16 @@
+# OK
+fragment TodoItem_Todo on Todo {
+  title
+  done
+}
+
+# NG
+fragment TodoItem on Todo {
+  title
+  done
+}
+
+fragment Todos_Todo on Todo {
+  title
+  done
+}
