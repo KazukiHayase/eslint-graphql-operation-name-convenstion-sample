@@ -1,0 +1,61 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Invalid #1 1`] = `
+"#### ⌨️ Code
+
+      1 | query TodoList { todos { id } }
+
+#### ❌ Error
+
+    > 1 | query TodoList { todos { id } }
+        |       ^^^^^^^^ Operation \\"TodoList\\" should have prefix \\"TodoList\\" and suffix \\"Query\\"
+
+#### 💡 Suggestion: Rename to \`TodoListQuery\`
+
+    1 | query TodoListQuery { todos { id } }"
+`;
+
+exports[`Invalid #2 1`] = `
+"#### ⌨️ Code
+
+      1 | query TodosQuery { todos { id } }
+
+#### ❌ Error
+
+    > 1 | query TodosQuery { todos { id } }
+        |       ^^^^^^^^^^ Operation \\"TodosQuery\\" should have prefix \\"TodoList\\" and suffix \\"Query\\"
+
+#### 💡 Suggestion: Rename to \`TodoListQuery\`
+
+    1 | query TodoListQuery { todos { id } }"
+`;
+
+exports[`Invalid #3 1`] = `
+"#### ⌨️ Code
+
+      1 | fragment TodoItem on Todo { id }
+
+#### ❌ Error
+
+    > 1 | fragment TodoItem on Todo { id }
+        |          ^^^^^^^^ Fragment \\"TodoItem\\" should have prefix \\"TodoItem\\" and suffix \\"_Todo\\"
+
+#### 💡 Suggestion: Rename to \`TodoItem_Todo\`
+
+    1 | fragment TodoItem_Todo on Todo { id }"
+`;
+
+exports[`Invalid #4 1`] = `
+"#### ⌨️ Code
+
+      1 | fragment Todos_Todo on Todo { id }
+
+#### ❌ Error
+
+    > 1 | fragment Todos_Todo on Todo { id }
+        |          ^^^^^^^^^^ Fragment \\"Todos_Todo\\" should have prefix \\"TodoItem\\" and suffix \\"_Todo\\"
+
+#### 💡 Suggestion: Rename to \`TodoItem_Todo\`
+
+    1 | fragment TodoItem_Todo on Todo { id }"
+`;
